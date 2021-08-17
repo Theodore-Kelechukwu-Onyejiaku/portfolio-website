@@ -5,11 +5,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js",
-    "server": "nodemon app.js",
-    "frontend": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
-    "build": "npm run build --prefix frontend"
+    "start": "node app.js"
   },
   "engines": {
     "node": "14.16.0"
