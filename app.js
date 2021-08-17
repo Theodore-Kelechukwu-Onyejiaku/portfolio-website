@@ -34,6 +34,8 @@ db.on("open", ()=>{
 
 const indexRouter = require("./routes/index")
 
+app.use(express.static(path.join(__dirname,"/frontend/resume-fe/build")));
+
 app.use("/", indexRouter);
 
 const PORT = process.env.PORT || 5000;
