@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Scrollspy from 'react-scrollspy';
 import theo from "../assets/kc.jpg";
 import resume from "../assets/resume.pdf"
 import ContactForm from "../components/ContactForm"
@@ -21,14 +22,14 @@ const Home = () => {
                         </div>
                         <p></p>
                         <div className="center-align" style={{ height: "20%" }}>
-                            <button class="btn red animate__animated animate__bounce">My Stack</button>
+                            <button class="btn red animate__animated animate__bounce" id="stack">My Stack</button>
                             {" "}
-                            <button class="btn animate__animated animate__swing">Contact Me</button>
+                            <button class="btn animate__animated animate__swing" id="contact">Contact Me</button>
                             {" "}
-                            <button class="btn blue animate__animated animate__wobble">About Me</button>
+                            <button class="btn blue animate__animated animate__wobble" id="about">About Me</button>
                             <br />
                             <br />
-                            <button class="btn yellow animate__animated animate__shakeX">Experience</button>
+                            <button class="btn yellow animate__animated animate__shakeX" id="experience">Experience</button>
                             <br />
                             <a href={resume} className="btn grey tooltipped" data-position="bottom" data-tooltip="I am a tooltip">Download my Resume!<i className="fa fa-download"></i></a>
                         </div>
@@ -41,6 +42,7 @@ const Home = () => {
                 </div>
             </div>
 
+            <Scrollspy items={ ['stack', 'contact', 'about', "experience"] } currentClassName="is-current">
             {/* ABOUT SECTION */}
             <div className="container">
 
@@ -58,6 +60,8 @@ const Home = () => {
 
                     </div>
                 </div>
+            <li><a href="#stack">stack</a></li>
+
             </div>
             {/* ABOUT SECTION END */}
 
@@ -141,6 +145,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            </Scrollspy>
         </div>
     )
 }
