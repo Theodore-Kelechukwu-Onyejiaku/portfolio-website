@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+/* MODAL */
+.my-modal{
+  position:fixed;
+  z-index: 34;
+  overflow: auto;
+  top:0%;
+  left:0%;
+  width: 100%;
+  height:100%;
+  opacity: 1;
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.delete-modal{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  background-color: #fafafa;
+  width: 95%;
+  padding:3%;
+}
+.modal-warning{
+  color:red;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.modal-success{
+  color:#26a69a;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* The Close Button */
+.close {
+  position: absolute;
+  right:0px;
+  top:0px;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.span-btn{
+  cursor:pointer;
+}
+
+/* DESKTOP MODE */
+@media only screen and (min-width: 600px) {
+
+  /* FOR DELETE MODAL */
+  .delete-modal{
+      width:50%;
   }
 }

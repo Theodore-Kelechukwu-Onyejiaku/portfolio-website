@@ -11,11 +11,12 @@ exports.contactMe = async(req, res, next)=>{
     console.log(contactInfo)
     if(contactInfo == null){
         console.log("nothing in request body");
-        res.status(400).json({status: "fail", message: "bad request!"});
+        res.status(400).json({status: "fail", message: "Please enter all fields"});
     }
     const contact = new Contact({
         name: req.body.name,
         email: req.body.email,
+        message: req.body.message
     })
     try{
         const newContact = await contact.save();
@@ -34,7 +35,7 @@ exports.contactMe = async(req, res, next)=>{
                       <h1  style='font-family:Tangerine, cursive'>Message from Theodore 🖐😎</h1>
                           <p>${emailContent}</p>
                           <p></p>
-                          <button style="background-color:#ee6e73;border:none;outline:none;color:white;padding:2%;cursor:pointer"><a href="${link}">Verify Account</a></button>
+                          <a href="${link}">View response</a>
                       <footer></footer>
                   </body>
                   `
@@ -43,11 +44,11 @@ exports.contactMe = async(req, res, next)=>{
             async (resp) => {
               console.log("Sent Successfully")
               console.log(link);
-              return res.status(200).json({status: "ok", message: "Sent successfully!", contact: newContact});
+              res.status(200).json({status: "ok", message: "Sent successfully! Please check your email to see your response!", contact: newContact});
             },
             (error) => {
               console.error(error.message);
-              return res.status(500).json({status: "fail", message:"Something went wrong"})
+              res.status(500).json({status: "fail", message:"Something went wrong"})
             }
           );
     }
