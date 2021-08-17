@@ -34,7 +34,7 @@ db.on("open", ()=>{
 
 const indexRouter = require("./routes/index")
 
-app.use(express.static(path.join(__dirname,"public")));
+app.use(express.static(path.join(__dirname,"frontend/build")));
 app.use("/contact", indexRouter);
 
 app.use("*", (req, res) => {
