@@ -34,12 +34,12 @@ db.on("open", ()=>{
 
 const indexRouter = require("./routes/index")
 
-app.use(express.static(path.join(__dirname,"frontend/build")));
+app.use(express.static(path.join(__dirname,"public")));
 app.use("/contact", indexRouter);
 
-// app.use("*", (req, res) => {
-//   res.redirect("/")
-// });
+app.use("*", (req, res) => {
+  res.redirect("/")
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, ()=>{
