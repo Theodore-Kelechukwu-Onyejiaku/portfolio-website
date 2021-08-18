@@ -15,7 +15,7 @@ const Home = () => {
                 <div className="col s12 m8 l4
                 ">
                     <div style={{
-                        height: "100vh"
+                        height: "100vh",width:"100vw"
                     }}>
                         <div style={{ height: "67%", }}>
                             <img className="circle" src={theo} style={{ height: "100%", width: "100%", margin: "0 auto", opacity: "0.6" }} alt="theodore" />
@@ -28,15 +28,11 @@ const Home = () => {
                             {" "}
                             <a className="btn blue animate__animated animate__wobble" href="#about">About Me</a>
                             <br />
-                            <br />
                             <a className="btn yellow animate__animated animate__shakeX" href="#experience">Experience</a>
                             <br />
-                            <br/>
                             <a href={resume} className="btn grey tooltipped" data-position="bottom" data-tooltip="I am a tooltip">Download my Resume<i className="fa fa-download"></i></a>
-                        </div>
-                        <br/>
-                        <div className="white-text center-align">
-                            <h6 className="animate__animated animate__rubberBand">Theodore Kelechukwu Onyejiaku(Backend Developer)</h6>
+                            <h6 className="white-text animate__animated animate__rubberBand">Theodore Kelechukwu Onyejiaku(Backend Developer)</h6>
+                        
                         </div>
                     </div>
                 </div>
