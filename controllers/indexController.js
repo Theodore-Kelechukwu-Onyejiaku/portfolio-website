@@ -23,7 +23,7 @@ exports.contactMe = async(req, res, next)=>{
 
         const protocol = req.protocol;
         const host = req.get("host");
-        const link = `${protocol}://${host}/contact/${newContact._id}`;
+        const link = `${protocol}://${host}/response/${newContact._id}`;
         const emailContent = `Hi ${req.body.name}, you have just contacted Theodore. Below is the link to your response \n`;
     
         const msg = {
