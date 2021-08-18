@@ -8,9 +8,7 @@ exports.getHomePage = (req,res,next)=>{
 
 exports.contactMe = async(req, res, next)=>{
     const contactInfo =  req.body;
-    console.log(contactInfo)
     if(contactInfo == null){
-        console.log("nothing in request body");
         res.status(400).json({status: "fail", message: "Please enter all fields"});
     }
     const contact = new Contact({
@@ -42,8 +40,6 @@ exports.contactMe = async(req, res, next)=>{
           };
           sgMail.send(msg).then(
             async (resp) => {
-              console.log("Sent Successfully")
-              console.log(link);
               res.status(200).json({status: "ok", message: "Sent successfully! Please check your email to see your response!", contact: newContact});
             },
             (error) => {

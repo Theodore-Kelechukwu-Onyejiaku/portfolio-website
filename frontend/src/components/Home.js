@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Scrollspy from 'react-scrollspy';
 import theo from "../assets/kc.jpg";
 import resume from "../assets/resume.pdf"
@@ -22,14 +22,14 @@ const Home = () => {
                         </div>
                         <p></p>
                         <div className="center-align" style={{ height: "20%" }}>
-                            <a class="btn red animate__animated animate__bounce" href="#stack">My Stack</a>
+                            <a className="btn red animate__animated animate__bounce" href="#stack">My Stack</a>
                             {" "}
-                            <a class="btn animate__animated animate__swing" href="#contact">Contact Me</a>
+                            <a className="btn animate__animated animate__swing" href="#contact">Contact Me</a>
                             {" "}
-                            <a class="btn blue animate__animated animate__wobble" href="#about">About Me</a>
+                            <a className="btn blue animate__animated animate__wobble" href="#about">About Me</a>
                             <br />
                             <br />
-                            <a class="btn yellow animate__animated animate__shakeX" href="#experience">Experience</a>
+                            <a className="btn yellow animate__animated animate__shakeX" href="#experience">Experience</a>
                             <br />
                             <br/>
                             <a href={resume} className="btn grey tooltipped" data-position="bottom" data-tooltip="I am a tooltip">Download my Resume<i className="fa fa-download"></i></a>
@@ -48,10 +48,10 @@ const Home = () => {
             {/* ABOUT SECTION */}
             <div className="container" id="about">
 
-                <div class="section white">
-                    <div class="row container">
-                        <h2 class="header">About Me</h2>
-                        <p class="grey-text text-darken-3 lighten-3">
+                <div className="section white">
+                    <div className="row container">
+                        <h2 className="header">About Me</h2>
+                        <p className="grey-text text-darken-3 lighten-3">
                             Hi my name is <strong><span style={{ textDecoration: "undeline" }}>Theodore Kelechukwu Onyejiaku</span></strong>. I am a full-stack developer.
                             I hail from Imo State, born in Onitsha and grew up in the busy streets of Lagos.
                             My dream is to be a world-class software engineer. Study in Germany and base their.
@@ -70,41 +70,41 @@ const Home = () => {
             {/* MY STACK SECTION */}
             <div style={{ background: "linear-gradient(to right, #200122, #6f0000)", padding: "5% 0% 5% 0%" }} id="stack">
                 <div className="container">
-                    <div class="section white">
-                        <div class="row container">
-                            <h2 class="header">My Stack</h2>
-                            <p class="grey-text text-darken-3 lighten-3">
+                    <div className="section white">
+                        <div className="row container">
+                            <h2 className="header">My Stack</h2>
+                            <p className="grey-text text-darken-3 lighten-3">
                                 I am a <strong>MERN Stack Developer!</strong> I use MongoDB as my database, ReactJs for my frontend and expressJS coupled with NodeJS as my backend technologies.
                             </p>
                             <div className="row">
                                 <div className="col s12 m6 l3">
-                                    <div class="card-panel red">
+                                    <div className="card-panel red">
                                         <h6 className="white-text">MONGODB</h6>
-                                        <span class="white-text">
+                                        <span className="white-text">
                                             MongoDB is a No-Sql Database that is scalable, fast, document-based and object-oriented database
                                         </span>
                                     </div>
                                 </div>
                                 <div className="col s12 m6 l3">
-                                    <div class="card-panel green">
+                                    <div className="card-panel green">
                                         <h6 className="white-text">EXPRESSJS</h6>
-                                        <span class="white-text">
+                                        <span className="white-text">
                                             ExpressJS is a NodeJs framework for building scalable and fast server applications.
                                         </span>
                                     </div>
                                 </div>
                                 <div className="col s12 m6 l3">
-                                    <div class="card-panel blue">
+                                    <div className="card-panel blue">
                                         <h6 className="white-text">REACTJS</h6>
-                                        <span class="white-text">
+                                        <span className="white-text">
                                             ReactJS is a frontend framework for building fast and large ui applications. It is managed by Facebook
                                         </span>
                                     </div>
                                 </div>
                                 <div className="col s12 m6 l3">
-                                    <div class="card-panel yellow pulse">
+                                    <div className="card-panel yellow pulse">
                                         <h6 className="white-text">NODEJS</h6>
-                                        <span class="white-text">
+                                        <span className="white-text">
                                             NodeJS is a runtime built using the Google Chrome V8 engine. It is very fast!
                                         </span>
                                     </div>
@@ -120,11 +120,11 @@ const Home = () => {
 
             {/* EXPERIENCE SECTION */}
             <div className="container" id="experience">
-                <div class="section white">
-                    <div class="row container">
-                        <h2 class="header">Latest Experience</h2>
+                <div className="section white">
+                    <div className="row container">
+                        <h2 className="header">Latest Experience</h2>
             
-                        <p class="grey-text text-darken-3 lighten-3">
+                        <p className="grey-text text-darken-3 lighten-3">
                             My latest Experience is the <strong>HNG</strong> internship 8.
                         </p>
 
@@ -137,9 +137,9 @@ const Home = () => {
             {/* CONTACT SECTION */}
             <div style={{ background: "linear-gradient(to right, #200122, #6f0000)", padding: "5% 0% 5% 0%" }} id="contact">
                 <div className="container">
-                    <div class="section white">
-                        <div class="row container">
-                    <h2 class="header">Contact Me</h2>
+                    <div className="section white">
+                        <div className="row container">
+                    <h2 className="header">Contact Me</h2>
                             <ContactForm/>
                             <a href={resume} className="btn grey tooltipped" data-position="bottom" data-tooltip="I am a tooltip">Download my resume <i className="fa fa-download"></i></a>
 

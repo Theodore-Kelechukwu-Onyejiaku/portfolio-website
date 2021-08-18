@@ -11,7 +11,6 @@ const Error = () => {
         const id = window.location.pathname.split("/")[window.location.pathname.split("/").length - 1];
         fetch("/contact/" + id)
             .then(response => {
-                console.log(response)
                 return response.json();
             })
             .then(result => {
@@ -22,10 +21,9 @@ const Error = () => {
                 } else {
                     M.toast({ html: result.message, classes: "green white-text" })
                     setResponse(result.contact)
-                    console.log(userResponse)
                 }
             })
-    }, [])
+    }, [userResponse])
     if (error) {
         return(
             <p className="red-text">{error}</p>
@@ -35,8 +33,8 @@ const Error = () => {
             <div className="center-align">
                 <h1>Hi! 😎</h1>
                 <p>Thanks for contacting Theodore. Below is your response</p>
-                <div class="section white">
-                    <div class="row container">
+                <div className="section white">
+                    <div className="row container">
                         <form>
                             <div className="row">
                                 <div className="input-field col s12">
@@ -45,8 +43,8 @@ const Error = () => {
                                 <div className="input-field col s12">
                                     <input id="icon_prefix" type="text" className="validate" disabled value={userResponse.name}/>
                                 </div>
-                                <div class="input-field col s12">
-                                    <textarea id="textarea1" class="materialize-textarea" disabled value={userResponse.message}></textarea>
+                                <div className="input-field col s12">
+                                    <textarea id="textarea1" className="materialize-textarea" disabled value={userResponse.message}></textarea>
                                 </div>
                             
                             </div>

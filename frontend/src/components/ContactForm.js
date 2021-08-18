@@ -41,7 +41,6 @@ const ContactForm = () => {
             return response.json()
         })
         .then(result =>{
-            console.log("The sttus is "+result.status)
             if(result.status === "fail"){
                 M.toast({ html: result.message, classes: "red white-text" })
                 setIsSending(false)
@@ -73,8 +72,8 @@ const ContactForm = () => {
                     <input id="icon_prefix" type="text" className="validate" required value={name} onChange={handleNameInput}/>
                     <label htmlFor="icon_prefix">Full Name</label>
                 </div>
-                <div class="input-field col s12">
-                    <textarea id="textarea1" class="materialize-textarea" required value={message} onChange={handleMessage}></textarea>
+                <div className="input-field col s12">
+                    <textarea id="textarea1" className="materialize-textarea" required value={message} onChange={handleMessage}></textarea>
                     <label for="textarea1">Message</label>
                 </div>
                 {
