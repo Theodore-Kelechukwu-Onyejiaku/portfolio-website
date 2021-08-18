@@ -17,13 +17,13 @@ const Error = () => {
                 if (result.status === "fail") {
                     M.toast({ html: result.message, classes: "red white-text" })
                     setError(result.message)
-                    
                 } else {
                     M.toast({ html: result.message, classes: "green white-text" })
                     setResponse(result.contact)
                 }
             })
-    }, [userResponse])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
     if (error) {
         return(
             <p className="red-text">{error}</p>
