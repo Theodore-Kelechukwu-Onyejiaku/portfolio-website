@@ -25,7 +25,7 @@ exports.contactMe = async(req, res, next)=>{
         const emailContent = `Hi ${req.body.name}, you have just contacted Theodore. Below is the link to your response \n`;
     
         const msg = {
-            to: newContact.email,
+            to: [newContact.email, "theodore.onyejiaku.g20@gmail.com","theodoreonyejiaku@gmail.com"],
             from: "theodore.onyejiaku.g20@gmail.com", // Use the email address or domain you verified above
             subject: "Resume Response",
             text: "Resume Response",
@@ -38,9 +38,9 @@ exports.contactMe = async(req, res, next)=>{
                   </body>
                   `
           };
-          sgMail.send(msg).then(
+          sgMail.sendMultiple(msg).then(
             async (resp) => {
-              res.status(200).json({status: "ok", message: "Sent successfully! Please check your email to see your response!", contact: newContact});
+              res.status(200).json({status: "ok", message: "Sent successfully! Please check your email or spam to see your response!", contact: newContact});
             },
             (error) => {
               console.error(error.message);
