@@ -69,8 +69,8 @@ const ContactForm = () => {
                     <label htmlFor="icon_prefix">Email</label>
                 </div>
                 <div className="input-field col s12">
-                    <input id="icon_prefix" type="text" className="validate" required value={name} onChange={handleNameInput}/>
-                    <label htmlFor="icon_prefix">Full Name</label>
+                    <input id="" type="text" className="validate" required value={name} onChange={handleNameInput}/>
+                    <label htmlFor="icon_prefix">Name</label>
                 </div>
                 <div className="input-field col s12">
                     <textarea id="textarea1" className="materialize-textarea" required value={message} onChange={handleMessage}></textarea>
