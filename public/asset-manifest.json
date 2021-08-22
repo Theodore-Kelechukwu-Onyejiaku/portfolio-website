@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.9ffa3ed4.chunk.css",
-    "main.js": "/static/js/main.441fef32.chunk.js",
-    "main.js.map": "/static/js/main.441fef32.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.3dd50936.js",
-    "runtime-main.js.map": "/static/js/runtime-main.3dd50936.js.map",
+    "main.css": "/static/css/main.1071a45a.chunk.css",
+    "main.js": "/static/js/main.a834f4b5.chunk.js",
+    "main.js.map": "/static/js/main.a834f4b5.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.4241c911.js",
+    "runtime-main.js.map": "/static/js/runtime-main.4241c911.js.map",
     "static/css/2.abbff4c2.chunk.css": "/static/css/2.abbff4c2.chunk.css",
-    "static/js/2.8d9ae895.chunk.js": "/static/js/2.8d9ae895.chunk.js",
-    "static/js/2.8d9ae895.chunk.js.map": "/static/js/2.8d9ae895.chunk.js.map",
-    "static/js/3.c3686eda.chunk.js": "/static/js/3.c3686eda.chunk.js",
-    "static/js/3.c3686eda.chunk.js.map": "/static/js/3.c3686eda.chunk.js.map",
+    "static/js/2.2232e3e2.chunk.js": "/static/js/2.2232e3e2.chunk.js",
+    "static/js/2.2232e3e2.chunk.js.map": "/static/js/2.2232e3e2.chunk.js.map",
+    "static/js/3.e1698bd0.chunk.js": "/static/js/3.e1698bd0.chunk.js",
+    "static/js/3.e1698bd0.chunk.js.map": "/static/js/3.e1698bd0.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.abbff4c2.chunk.css.map": "/static/css/2.abbff4c2.chunk.css.map",
-    "static/css/main.9ffa3ed4.chunk.css.map": "/static/css/main.9ffa3ed4.chunk.css.map",
-    "static/js/2.8d9ae895.chunk.js.LICENSE.txt": "/static/js/2.8d9ae895.chunk.js.LICENSE.txt",
+    "static/css/main.1071a45a.chunk.css.map": "/static/css/main.1071a45a.chunk.css.map",
+    "static/js/2.2232e3e2.chunk.js.LICENSE.txt": "/static/js/2.2232e3e2.chunk.js.LICENSE.txt",
     "static/media/font-awesome.min.css": "/static/media/fontawesome-webfont.f691f37e.woff",
     "static/media/kc.b058c66e.jpg": "/static/media/kc.b058c66e.jpg",
     "static/media/resume.a29eefe8.pdf": "/static/media/resume.a29eefe8.pdf"
   },
   "entrypoints": [
-    "static/js/runtime-main.3dd50936.js",
+    "static/js/runtime-main.4241c911.js",
     "static/css/2.abbff4c2.chunk.css",
-    "static/js/2.8d9ae895.chunk.js",
-    "static/css/main.9ffa3ed4.chunk.css",
-    "static/js/main.441fef32.chunk.js"
+    "static/js/2.2232e3e2.chunk.js",
+    "static/css/main.1071a45a.chunk.css",
+    "static/js/main.a834f4b5.chunk.js"
   ]
 }
