@@ -3,6 +3,10 @@ body{
   font-size: 150%;
 }
 
+#experience *{
+  font-size: 100%;
+}
+
 
 #theo{
   display: block;
@@ -16,6 +20,44 @@ body{
 .section{
   height:100vh;
   /* border: 3px solid green; */
+}
+
+.ham-cont{
+  position: fixed;
+  left:80%;
+  right: 0px;
+  z-index: 20;
+}
+
+.my-nav{
+  /* background-color: grey; */
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0s;
+  position: fixed;
+  height: 100%;
+  width: 0%;
+  z-index: 10;
+  color:white;
+}
+
+.my-nav-link-container{
+  width:100%;
+  margin-top:5%;
+  text-align: center;
+}
+.my-nav-link {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+.my-nav-link:hover, .my-nav-link:focus{
+  color: #f1f1f1;
 }
 
 /* DESKTOP MODE */

@@ -59,6 +59,9 @@ const ContactForm = () => {
         })
     }
     return (
+        <>
+        <div className="row"></div>
+
         <form onSubmit={submit}>
             <h6 className="red-text">{error}</h6>
             <h6 className="green-text">{success}</h6>
@@ -84,6 +87,7 @@ const ContactForm = () => {
                 }
             </div>
         </form>
+        </>
     )
 }
 export default ContactForm;

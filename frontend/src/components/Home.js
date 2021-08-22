@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import Scrollspy from 'react-scrollspy';
 import theo from "../assets/kc.jpg";
 import resume from "../assets/resume.pdf"
-import ContactForm from "../components/ContactForm"
+import ContactForm from "../components/ContactForm";
+import Nav from "../components/Nav";
 
 
 const Home = () => {
@@ -14,12 +15,23 @@ const Home = () => {
             let about = document.getElementById("aboutBtn");
             let stack = document.getElementById("stackBtn");
             let exp = document.getElementById("expBtn");
+            let contact = document.getElementById("contBtn")
+            let project = document.getElementById("proBtn");
 
             // SECTIONS
             let aboutSection = document.getElementById("about");
             let stackSection = document.getElementById("stack");
             let expSection = document.getElementById("experience")
+            let contactSection = document.getElementById("contact")
+            let proSection = document.getElementById("projects")
 
+            project.addEventListener("click", () => {
+                proSection.classList.add("animate__flipInY")
+                setTimeout(() => {
+                    proSection.classList.remove("animate__flipInY")
+                }, 1000)
+            })
+            
             about.addEventListener("click", () => {
                 aboutSection.classList.add("animate__rubberBand")
                 setTimeout(() => {
@@ -35,10 +47,16 @@ const Home = () => {
             })
 
             exp.addEventListener("click", () => {
-                console.log("exp oyaa")
                 expSection.classList.add("animate__swing")
                 setTimeout(() => {
                     expSection.classList.remove("animate__swing")
+                }, 1000)
+            })
+
+            contact.addEventListener("click", () => {
+                contactSection.classList.add("animate__bounceInLeft")
+                setTimeout(() => {
+                    contactSection.classList.remove("animate__bounceInLeft")
                 }, 1000)
             })
 
@@ -46,6 +64,7 @@ const Home = () => {
     }, [])
     return (
         <div style={{ overflow: "hidden" }}>
+            <Nav />
             <div className="row">
                 <div className="col s12 m2 l4">
 
@@ -61,13 +80,13 @@ const Home = () => {
                         <div className="center-align" style={{ height: "20%" }}>
                             <a className="btn red animate__animated animate__bounce" href="#stack" id="stackBtn">My Stack</a>
                             {" "}
-                            <a className="btn red animate__animated animate__swing" href="#contact">Contact Me</a>
+                            <a className="btn red animate__animated animate__swing" href="#contact" id="contBtn">Contact Me</a>
                             {" "}
                             <a className="btn red animate__animated animate__wobble" href="#about" id="aboutBtn">About Me</a>
                             <br />
                             <a className="btn red animate__animated animate__shakeX" href="#experience" id="expBtn">My Experience</a>
                             {" "}
-                            <a className="btn red animate__animated animate__shakeX" href="#">Projects</a>
+                            <a className="btn red animate__animated animate__shakeX" href="#projects" id="proBtn">Projects</a>
                             <p></p>
                             <a href={resume} className="btn grey tooltipped" data-position="bottom" data-tooltip="I am a tooltip">Download my Resume<i className="fa fa-download"></i></a>
                             <h6 className="animate__animated animate__rubberBand">Theodore Kelechukwu Onyejiaku(Backend Developer)</h6>
@@ -85,7 +104,7 @@ const Home = () => {
 
                     <div className="section white">
                         <div className="row container">
-                            <h4 className="header">About Me</h4>
+                            <h4 className="header"><u>About Me</u></h4>
                             <p className="grey-text text-darken-3 lighten-3">
                                 Hi my name is <strong><span style={{ textDecoration: "undeline" }}>Theodore Kelechukwu Onyejiaku</span></strong>. I am a full-stack developer.
                                 I hail from Imo State, born in Onitsha and grew up in the busy streets of Lagos.
@@ -107,7 +126,7 @@ const Home = () => {
                     <div className="">
                         <div className="section white">
                             <div className="row container ">
-                                <h4 className="header">My Stack</h4>
+                                <h4 className="header"><u>My Stack</u></h4>
                                 <p className="grey-text text-darken-3 lighten-3">
                                     I am a <strong>MERN Stack Developer!</strong> I use MongoDB as my database, ReactJs for my frontend and expressJS coupled with NodeJS as my backend technologies.
 
@@ -123,7 +142,7 @@ const Home = () => {
                                                         <p class="grey-text text-darken-2">
                                                             MongoDB is a No-Sql Database that is scalable, fast, document-based and object-oriented database
                                                         </p>
-                                                        <p class="right-align grey-text"><small className="green-text">T</small></p>
+                                                        <p class="right-align grey-text"><small className="green-text">100%</small></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -164,15 +183,14 @@ const Home = () => {
                                     </div>
 
                                     <div className="col s12 m6">
-                                    <div class="card hoverable">
+                                        <div class="card hoverable">
                                             <div>
                                                 <div class="card medium">
-                                            <h6>NODEJS</h6>
-                                                    <h6>REACTJS</h6>
+                                                    <h6>NODEJS</h6>
                                                     <div class="card-content">
                                                         <h6 class="truncate black-text"><b>About</b></h6>
                                                         <p class="grey-text text-darken-2">
-                                                NodeJS is a runtime built using the Google Chrome V8 engine. It is very fast!
+                                                            NodeJS is a runtime built using the Google Chrome V8 engine. It is very fast!
                                                         </p>
                                                         <p class="right-align grey-text"><small className="green-text">100%</small></p>
                                                     </div>
@@ -192,38 +210,39 @@ const Home = () => {
 
                 </div>
                 {/* EXPERIENCE SECTION */}
-                
+
                 <div className="container animate__animated section" id="experience">
                     <div className="">
                         <div className="section white">
                             <div className="row container">
-                                <h4 className="header">Latest Experience</h4>
-                                <p className="">
-                                    My latest Experience is the <strong>HNG</strong> internship 8.
-                                </p>
+                                <h4 className="header"><u>Experience</u></h4>
+                                My latest Experience is the <strong>HNG</strong> internship 8.
                             </div>
-                            {/* <div className="container">
+                            <div className="container">
                                 <ul class="collection">
                                     <li class="collection-item">
-                                        <div>
+                                        <div className="">
                                             <h5>Educative.io(Technical Writer)</h5>
-                                            <p>
-                                                <i class="material-icons">chevron_right</i>
-                                                I write articles on this platform. I am also a Gold contributor. This means that I get paid for writing articles!
-                                            </p>
                                         </div>
                                     </li>
                                     <li class="collection-item">
                                         <div>
-                                            <h5>Educative.io(Technical Writer)</h5>
-                                            <p>
-                                                <i class="material-icons">chevron_right</i>
-                                                I write articles on this platform. I am also a Gold contributor. This means that I get paid for writing articles!
-                                            </p>
+                                            <h5><strong>Genesys Tech Hub(Backend Intern)</strong></h5>
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div>
+                                            <h5><strong>Web Developer and Freelancer</strong></h5>
+
+                                        </div>
+                                    </li>
+                                    <li class="collection-item">
+                                        <div>
+                                            <h5><strong>Highest Point Information Tech (Programming Tutor)</strong></h5>
                                         </div>
                                     </li>
                                 </ul>
-                            </div> */}
+                            </div>
 
                         </div>
                     </div>
@@ -231,21 +250,50 @@ const Home = () => {
                 {/* ABOUT SECTION END */}
 
 
+                {/* PROJECTS SECTION */}
+                <div className="animate__animated section" id="projects">
+                    <div className="container">
+                        <div className="section white">
+                            <div className="row container">
+                                <h4 className="header"><u>Projects</u></h4>
+                                <ul className="collection">
+                                    <li className="collection-item">
+                                        <i class="material-icons">chevron_right</i>An application that will help students(Under Construction): <a href="https://campus-foodie.netlify.app/">Link</a><br />
+                                        Admin email: admin@gmail.com, password: password
+                                    </li>
+                                    <li className="collection-item"><i class="material-icons">chevron_right</i>A banking application : <a href="https://ctbconnectt.com/">Link</a></li>
+                                    <li className="collection-item"><i class="material-icons">chevron_right</i>A courier delivery service: <a href=" https://skywaydeliveryservice.com/">Link</a></li>
+                                    <li className="collection-item"><i class="material-icons">chevron_right</i>An email SMTP: <a href="https://dubaislamicbank.com">Link</a></li>
+                                    <li className="collection-item"><i class="material-icons">chevron_right</i>A crypto investment platform: <a href="https://cryptoliteinvest.com/">Link</a></li>
+                                    <li className="collection-item"><i class="material-icons">chevron_right</i>An E-learning platform for book recommendations(Under construction): <a href="https://naija-bookie.herokuapp.com/">Link</a></li>
+                                    <li className="collection-item"><i class="material-icons">chevron_right</i>A b2b project under construction: <a href="https://myq-fe.netlify.app/">Link</a></li>
+                                </ul>
+                                <p>
+                                    Want to see more? <a href="https://github.com/Theodore-Kelechukwu-Onyejiaku">Visit My Github</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* END OF PROJECTS SECTION */}
+
 
                 {/* CONTACT SECTION */}
                 <div className="animate__animated section" id="contact">
                     <div className="container">
                         <div className="section white">
                             <div className="row container">
-                                <h4 className="header">Contact Me</h4>
+                                <h4 className="header"><u>Contact Me</u></h4>
                                 <ContactForm />
-                                <a href={resume} className="btn grey tooltipped" data-position="bottom" data-tooltip="I am a tooltip">Download my resume <i className="fa fa-download"></i></a>
 
                             </div>
                         </div>
                     </div>
                 </div>
             </Scrollspy>
+            <a href={resume} className="btn grey tooltipped" data-position="bottom" data-tooltip="I am a tooltip">Download my resume <i className="fa fa-download"></i></a>
+
         </div>
     )
 }
