@@ -24,6 +24,7 @@ body{
 
 .ham-cont{
   position: fixed;
+  top: 5%;
   left:80%;
   right: 0px;
   z-index: 20;
@@ -58,6 +59,19 @@ body{
 
 .my-nav-link:hover, .my-nav-link:focus{
   color: #f1f1f1;
+}
+
+.connect{
+  width: 50%;
+  margin: auto;
+  position: relative;
+  top: 15%;
+}
+
+
+.connect .fa{
+  border-radius: 50%;
+  border: thin solid black;
 }
 
 /* DESKTOP MODE */

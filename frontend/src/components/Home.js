@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Scrollspy from 'react-scrollspy';
 import theo from "../assets/kc.jpg";
+import linkedin from "../assets/linkedin.png";
 import resume from "../assets/resume.pdf"
 import ContactForm from "../components/ContactForm";
 import Nav from "../components/Nav";
@@ -31,7 +32,7 @@ const Home = () => {
                     proSection.classList.remove("animate__flipInY")
                 }, 1000)
             })
-            
+
             about.addEventListener("click", () => {
                 aboutSection.classList.add("animate__rubberBand")
                 setTimeout(() => {
@@ -75,9 +76,23 @@ const Home = () => {
                     }}>
                         <div style={{ height: "67%", }}>
                             <img className="circle animate__animated animate__bounceInDown" src={theo} id="theo" alt="theodore" />
+                            <p></p>
+                            <div className="connect ">
+                                <div className="row">
+                                    <div className="col s4 center-align">
+                                        <i className="fa fa-linkedin fa-2x" ></i>
+                                    </div>
+                                    <div className="col s4 center-align">
+                                        <i className="fa fa-twitter fa-2x" ></i>
+                                    </div>
+                                    <div className="col s4 center-align">
+                                        <i className="fa fa-github fa-2x" ></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <p></p>
-                        <div className="center-align" style={{ height: "20%" }}>
+                        <div className="center-align " style={{ height: "20%" }}>
                             <a className="btn red animate__animated animate__bounce" href="#stack" id="stackBtn">My Stack</a>
                             {" "}
                             <a className="btn red animate__animated animate__swing" href="#contact" id="contBtn">Contact Me</a>
@@ -251,8 +266,8 @@ const Home = () => {
 
 
                 {/* PROJECTS SECTION */}
-                <div className="animate__animated section" id="projects">
-                    <div className="container">
+                <div className="container animate__animated section" id="projects">
+                    <div className="">
                         <div className="section white">
                             <div className="row container">
                                 <h4 className="header"><u>Projects</u></h4>
