@@ -1,108 +1,127 @@
-import React, { useEffect, useState } from "react";
-import Hamburger from 'hamburger-react'
+import React from "react";
+import * as Scroll from "react-scroll";
+import {
+  Link,
+  Button,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
-const Nav = () => {
-    const [isOpen, setOpen] = useState(false)
-    useEffect(() => {
-        window.addEventListener("load", () => {
-            let myNav = document.querySelector(".my-nav");
-            let allLinks = document.querySelectorAll(".my-nav-link");
+class Nav extends React.Component {
+  componentDidMount() {
+    Events.scrollEvent.register("begin", function (to, element) {
+      console.log("begin", arguments);
+    });
 
-            //  LINKS
-            let aboutLink = document.getElementById("aboutLink");
-            let contactLink = document.getElementById("contactLink");
-            let stackLink = document.getElementById("stackLink");
-            let expLink = document.getElementById("expLink");
-            let projectLink = document.getElementById("projectLink");
+    Events.scrollEvent.register("end", function (to, element) {
+      console.log("end", arguments);
+    });
 
+    scrollSpy.update();
+  }
+  componentWillUnmount() {
+    Events.scrollEvent.remove("begin");
+    Events.scrollEvent.remove("end");
+  }
 
-            // SECTIONS
-            let aboutSection = document.getElementById("about");
-            let stackSection = document.getElementById("stack");
-            let expSection = document.getElementById("experience")
-            let contactSection = document.getElementById("contact")
-            let proSection = document.getElementById("projects")
+  scrollToTop() {
+    scroll.scrollToTop();
+  }
+  scrollToBottom() {
+    scroll.scrollToBottom();
+  }
 
-            console.log("tooggllee "+isOpen)
-            allLinks.forEach(eachLink => {
-                eachLink.addEventListener("click", () => {
-                    myNav.classList.remove("animate__slideInRight");
-                    myNav.classList.add("animate__fadeOutRight");
-                    closeCurtain();
-                })
-            })
+  scrollTo() {
+    scroll.scrollTo(100);
+  }
 
-            aboutLink.addEventListener("click", ()=>{
-                    aboutSection.classList.add("animate__rubberBand")
-                    setTimeout(() => {
-                        aboutSection.classList.remove("animate__rubberBand")
-                    }, 1000)
-            })
+  scrollMore() {
+    scroll.scrollMore(100);
+  }
 
-            projectLink.addEventListener("click", ()=>{
-                proSection.classList.add("animate__flipInY")
-                setTimeout(() => {
-                    proSection.classList.remove("animate__flipInY")
-                }, 1000)
-            })
+  handleSetActive(to) {
+    console.log(to);
+  }
 
-            contactLink.addEventListener("click", ()=>{
-                contactSection.classList.add("animate__bounceInLeft")
-                setTimeout(() => {
-                    contactSection.classList.remove("animate__bounceInLeft")
-                }, 1000)
-            })
-
-            expLink.addEventListener("click", ()=>{
-                expSection.classList.add("animate__swing")
-                setTimeout(() => {
-                    expSection.classList.remove("animate__swing")
-                }, 1000)
-            })
-
-            stackLink.addEventListener("click", ()=>{
-                stackSection.classList.add("animate__swing")
-                setTimeout(() => {
-                    stackSection.classList.remove("animate__swing")
-                }, 1000)
-            })
-        })
-    }, [])
-    const closeCurtain = ()=>{
-        setOpen(!isOpen)
-    }   
+  render() {
     return (
-        <>
-            <div className="ham-cont">
-                <Hamburger color="grey" toggled={isOpen} toggle={setOpen} id="ham" onToggle={toggled => {
-                    console.log("The state is " + isOpen)
-                    let myNav = document.querySelector(".my-nav");
-                    if (toggled) {
-                        // open a menu
-                        myNav.style.width = "100%"
-                        myNav.classList.remove("animate__fadeOutRight")
-                        myNav.classList.add("animate__slideInRight")
-                    } else {
-                        // close a menu
-                        myNav.classList.remove("animate__slideInRight")
-                        myNav.classList.add("animate__fadeOutRight")
-                    }
-                }} />
-            </div>
-            <div className="my-nav animate__animated ">
-                <div className="ham">
-                </div>
-                <div className="my-nav-link-container">
-                    <a className="my-nav-link" href="#about" id="aboutLink" onClick={closeCurtain}>About Me</a>
-                    <a className="my-nav-link" href="#stack" id="stackLink" onClick={closeCurtain}>My Stack</a>
-                    <a className="my-nav-link" href="#experience" id="expLink" onClick={closeCurtain}>Experience</a>
-                    <a className="my-nav-link" href="#projects" id="projectLink" onClick={closeCurtain}>Projects</a>
-                    <a className="my-nav-link" href="#contact" id="contactLink" onClick={closeCurtain}>Contact Me</a>
+      <div className="nav">
+        <div className="brand-name">
+          <span>@javascriptar</span>
+        </div>
+        <div className="navlink-box">
+          <ul>
+            <li className="nav-item">
+              <Link
+                activeClass="active"
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={2000}
+              >
+                About
+              </Link>
+            </li>
 
-                </div>
-            </div>
-        </>
-    )
+            <li className="nav-item">
+              <Link
+                activeClass="active"
+                to="stack"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={2000}
+              >
+                My Stack
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className="project"
+                to="project"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                Projects
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className="experience"
+                to="experience"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                Experience
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className="contact"
+                to="anchor"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                Contact
+              </Link>
+            </li>
+            <li className="nav-item">
+              <a href="https://www.educative.io/profile/view/5894995463110656">
+                Articles
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Nav;
