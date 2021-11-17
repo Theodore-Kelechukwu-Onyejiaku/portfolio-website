@@ -60,29 +60,19 @@ const Projects = () => {
     lists.forEach((list) => {
       list.addEventListener("click", () => {
         const value = list.getAttribute("data-filter");
-        console.log(value);
         if (value == "all") {
-          console.log("do na");
           document.querySelectorAll(".project-box").forEach((li) => {
             li.style.display = "block";
           });
         } else {
-          console.log("ooo");
           let nots = document.querySelectorAll(".project-box");
-          console.log(nots);
           nots.forEach((elem) => {
-            console.log();
-
             if (!elem.classList.contains(value)) {
-              if (elem.classList.contains(value)) {
-                elem.style.display = "none";
-              }
+              elem.style.display = "none";
             }
           });
 
           nots.forEach((elem) => {
-            console.log();
-
             if (elem.classList.contains(value)) {
               elem.style.display = "block";
             }
@@ -192,7 +182,7 @@ const Projects = () => {
             <a
               data-aos="fade-up"
               href={two}
-              className="project-box responsive-img personal "
+              className="project-box responsive-img education "
             >
               <img
                 src={two}

@@ -142,6 +142,12 @@ const SideNav = () => {
             Experience
           </Link>
           <Link
+            activeClass="active"
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={2000}
             className="my-nav-link"
             href="#contact"
             id="contactLink"

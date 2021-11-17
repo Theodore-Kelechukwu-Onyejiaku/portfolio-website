@@ -5,6 +5,8 @@ import linkedin from "../assets/linkedin.png";
 import resume from "../assets/resume.pdf";
 import ContactForm from "../components/ContactForm";
 import ScrollUp from "../components/ScrollUp";
+import { Element } from "react-scroll";
+
 import Nav from "../components/Nav";
 import SideNav from "../components/SideNav";
 import Particles from "../components/Particles";
@@ -52,6 +54,7 @@ const Home = () => {
   };
   useEffect(() => {
     window.addEventListener("load", () => {});
+    AOS.init();
   }, []);
   return (
     <div style={{ overflow: "hidden" }}>
@@ -115,13 +118,18 @@ const Home = () => {
       <Experience />
       <Certification />
       {/* CONTACT SECTION */}
-      <div id="contact">
+      <Element
+        id="contact"
+        className="element"
+        name="contact"
+        data-aos="fade-up"
+      >
         <div className="container">
           <div className="row container">
             <ContactForm />
           </div>
         </div>
-      </div>{" "}
+      </Element>{" "}
       {/* SCROLL TOP START */}
       {initialTop ? <ScrollUp className="" /> : <div></div>}
       {/* SCROLL TO END */}

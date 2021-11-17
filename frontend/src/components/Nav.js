@@ -104,7 +104,7 @@ class Nav extends React.Component {
             <li className="nav-item">
               <Link
                 className="contact"
-                to="anchor"
+                to="contact"
                 spy={true}
                 smooth={true}
                 duration={500}

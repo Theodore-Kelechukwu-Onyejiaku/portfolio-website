@@ -50,7 +50,7 @@ const ContactForm = () => {
           setIsSending(false);
         }
       })
-      .Scatch((error) => {
+      .catch((error) => {
         M.toast({ html: error.message, classes: "red white-text" });
         setError(error.message);
         setIsSending(false);
