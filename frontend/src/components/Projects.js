@@ -113,7 +113,7 @@ const Projects = () => {
         {/* Project Container */}
         <SRLWrapper options={options}>
           <div className="project-container">
-            <div>
+            {/* <div> */}
             <a
               data-aos="fade-up"
               href={four}
@@ -127,8 +127,23 @@ const Projects = () => {
                 <span>Visit</span>
               </a>
             </a>
- 
-            </div>
+
+              <a
+                data-aos="fade-up"
+                href={six}
+                className="project-box responsive-img personal"
+              >
+                <img
+                  src={six}
+                  alt="
+              A Responsive page built using React, Nodejs, Cloudinary,etc.
+              "
+                />
+                <a href="https://decode-yearphoto-book.netlify.app/" className="btn-animated">
+                  <span>Visit</span>
+                </a>
+              </a>
+            {/* </div> */}
 
             <a
               data-aos="fade-up"
@@ -146,21 +161,6 @@ const Projects = () => {
                 <span>Visit</span>
               </a>
             </a>
-            <a
-                data-aos="fade-up"
-                href={six}
-                className="project-box responsive-img personal"
-              >
-                <img
-                  src={six}
-                  alt="
-              Built with React, Express, Nodejs, Cloudinary, MongoDB, etc
-              "
-                />
-                <a href="https://decode-yearphoto-book.netlify.app/" className="btn-animated">
-                  <span>Visit</span>
-                </a>
-              </a>
             
             <a
               data-aos="fade-up"

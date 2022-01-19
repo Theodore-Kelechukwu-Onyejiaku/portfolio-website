@@ -1,155 +1,143 @@
-import React from 'react';
-import Scrollspy from 'react-scrollspy';
+import React, { useEffect, useState } from "react";
+import Scrollspy from "react-scrollspy";
 import theo from "../assets/kc.jpg";
-import resume from "../assets/resume.pdf"
-import ContactForm from "../components/ContactForm"
+import linkedin from "../assets/linkedin.png";
+import resume from "../assets/resume.pdf";
+import ContactForm from "../components/ContactForm";
+import ScrollUp from "../components/ScrollUp";
+import { Element } from "react-scroll";
 
+import Nav from "../components/Nav";
+import SideNav from "../components/SideNav";
+import Particles from "../components/Particles";
+import Footer from "../components/Footer";
+import AnimatedButton from "../components/AnimatedButton";
+import Stack from "../components/Stack";
+import About from "../components/About";
+import AutoType from "../components/AutoType";
+import Projects from "../components/Projects";
+import Experience from "../components/Experience.js";
+import Certification from "../components/Certifications";
+
+import { initializeJqueryWrapper } from "materialize-css";
+import AOS from "aos";
+
+import { body, linkDark, connectDark } from "../dark";
+
+// theme
+const getWindowTop = () => {
+  let top = window.scrollY;
+  return top;
+};
 
 const Home = () => {
-    return (
-        <div >
-            <div className="row" style={{ background: "linear-gradient(to right, #FF8235, #30E8BF" }}>
-                <div className="col s12 m2 l4">
+  const [initialTop, setInitialTop] = useState(false);
+  const [lightTheme, setTheme] = useState(true);
 
+  window.addEventListener("scroll", () => {
+    if (getWindowTop() > 5) {
+      setInitialTop(true);
+    } else {
+      setInitialTop(false);
+    }
+  });
+
+  const changeTheme = () => {
+    setTheme(!lightTheme);
+
+    if (lightTheme == false) {
+      document.querySelector("body").classList.add("bodyDark");
+      // document.querySelectorAll("")
+    } else {
+      document.querySelector("body").classList.remove("bodyDark");
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("load", () => {});
+    AOS.init();
+  }, []);
+  return (
+    <div style={{ overflow: "hidden" }}>
+      <Nav changeTheme={changeTheme} />
+      <SideNav lightTheme={lightTheme} />
+      <div className="row">
+        <div className="col s12 m2 l4"></div>
+        <div className="col s12 m8 l4">
+          <div
+            style={{
+              height: "100vh",
+            }}
+          >
+            <Particles />
+            <div className="hero">
+              <img
+                className="circle animate__animated animate__bounceInDown"
+                src={theo}
+                id="theo"
+                alt="theodore"
+              />
+              <p></p>
+
+              {/* SOCIAL CONNECT STARTS */}
+              <div className="connect ">
+                <div className="row">
+                  <div className="col s4 center-align">
+                    <a href="https://www.linkedin.com/in/theodore20151014166/">
+                      <i className="fa fa-linkedin fa-2x"></i>
+                    </a>
+                  </div>
+                  <div className="col s4 center-align">
+                    <a href="https://twitter.com/JavaScriptar">
+                      <i className="fa fa-twitter fa-2x"></i>
+                    </a>
+                  </div>
+                  <div className="col s4 center-align">
+                    <a href="https://github.com/Theodore-Kelechukwu-Onyejiaku">
+                      <i className="fa fa-github fa-2x"></i>
+                    </a>
+                  </div>
                 </div>
-                <div className="col s12 m8 l4
-                ">
-                    <div style={{
-                        height: "100vh"
-                    }}>
-                        <div style={{ height: "67%", }}>
-                            <img className="circle" src={theo} style={{ height: "100%", width: "100%", margin: "0 auto", opacity: "0.6" }} alt="theodore" />
-                        </div>
-                        <p></p>
-                        <div className="center-align" style={{ height: "20%" }}>
-                            <a className="btn red animate__animated animate__bounce" href="#stack">My Stack</a>
-                            {" "}
-                            <a className="btn animate__animated animate__swing" href="#contact">Contact Me</a>
-                            {" "}
-                            <a className="btn blue animate__animated animate__wobble" href="#about">About Me</a>
-                            <br />
-                            <br />
-                            <a className="btn yellow animate__animated animate__shakeX" href="#experience">Experience</a>
-                            <br />
-                            <br/>
-                            <a href={resume} className="btn grey tooltipped" data-position="bottom" data-tooltip="I am a tooltip">Download my Resume<i className="fa fa-download"></i></a>
-                        </div>
-                        <br/>
-                        <div className="white-text center-align">
-                            <h6 className="animate__animated animate__rubberBand">Theodore Kelechukwu Onyejiaku(Backend Developer)</h6>
-                        </div>
-                    </div>
-                </div>
-                <div className="col s12 m2 l4">
-                </div>
+              </div>
+              {/* SOCIAL CONNECT ENDS */}
+
+              {/* GO DOWN BUTTON STARTS*/}
+              <div className="down-btn-container">
+                <AutoType />
+                <AnimatedButton />
+              </div>
+              {/* GO DOWN BUTTON ENDS */}
             </div>
-
-            <Scrollspy items={ ['section-1', 'section-2', 'section-3'] } currentClassName="is-current">
-            {/* ABOUT SECTION */}
-            <div className="container" id="about">
-
-                <div className="section white">
-                    <div className="row container">
-                        <h2 className="header">About Me</h2>
-                        <p className="grey-text text-darken-3 lighten-3">
-                            Hi my name is <strong><span style={{ textDecoration: "undeline" }}>Theodore Kelechukwu Onyejiaku</span></strong>. I am a full-stack developer.
-                            I hail from Imo State, born in Onitsha and grew up in the busy streets of Lagos.
-                            My dream is to be a world-class software engineer. Study in Germany and base their.
-                        </p>
-                        <p>
-                            My hubbies include: Singing, playing guitar, chess, making jokes and thinking.
-                        </p>
-
-                    </div>
-                </div>
-            
-
-            </div>
-            {/* ABOUT SECTION END */}
-
-            {/* MY STACK SECTION */}
-            <div style={{ background: "linear-gradient(to right, #200122, #6f0000)", padding: "5% 0% 5% 0%" }} id="stack">
-                <div className="container">
-                    <div className="section white">
-                        <div className="row container">
-                            <h2 className="header">My Stack</h2>
-                            <p className="grey-text text-darken-3 lighten-3">
-                                I am a <strong>MERN Stack Developer!</strong> I use MongoDB as my database, ReactJs for my frontend and expressJS coupled with NodeJS as my backend technologies.
-                            </p>
-                            <div className="row">
-                                <div className="col s12 m6 l3">
-                                    <div className="card-panel red">
-                                        <h6 className="white-text">MONGODB</h6>
-                                        <span className="white-text">
-                                            MongoDB is a No-Sql Database that is scalable, fast, document-based and object-oriented database
-                                        </span>
-                                    </div>
-                                </div>
-                                <div className="col s12 m6 l3">
-                                    <div className="card-panel green">
-                                        <h6 className="white-text">EXPRESSJS</h6>
-                                        <span className="white-text">
-                                            ExpressJS is a NodeJs framework for building scalable and fast server applications.
-                                        </span>
-                                    </div>
-                                </div>
-                                <div className="col s12 m6 l3">
-                                    <div className="card-panel blue">
-                                        <h6 className="white-text">REACTJS</h6>
-                                        <span className="white-text">
-                                            ReactJS is a frontend framework for building fast and large ui applications. It is managed by Facebook
-                                        </span>
-                                    </div>
-                                </div>
-                                <div className="col s12 m6 l3">
-                                    <div className="card-panel yellow pulse">
-                                        <h6 className="white-text">NODEJS</h6>
-                                        <span className="white-text">
-                                            NodeJS is a runtime built using the Google Chrome V8 engine. It is very fast!
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            {/* MY STACK SECTION END*/}
-
-            {/* EXPERIENCE SECTION */}
-            <div className="container" id="experience">
-                <div className="section white">
-                    <div className="row container">
-                        <h2 className="header">Latest Experience</h2>
-            
-                        <p className="grey-text text-darken-3 lighten-3">
-                            My latest Experience is the <strong>HNG</strong> internship 8.
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-            {/* ABOUT SECTION END */}
-
-
-            {/* CONTACT SECTION */}
-            <div style={{ background: "linear-gradient(to right, #200122, #6f0000)", padding: "5% 0% 5% 0%" }} id="contact">
-                <div className="container">
-                    <div className="section white">
-                        <div className="row container">
-                    <h2 className="header">Contact Me</h2>
-                            <ContactForm/>
-                            <a href={resume} className="btn grey tooltipped" data-position="bottom" data-tooltip="I am a tooltip">Download my resume <i className="fa fa-download"></i></a>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </Scrollspy>
+            <p></p>
+          </div>
         </div>
-    )
-}
+        <div className="col s12 m2 l4"></div>
+      </div>
+      <About />
+      <Stack />
+      <Projects />
+      <Experience />
+      <Certification />
+      {/* CONTACT SECTION */}
+      <Element
+        id="contact"
+        className="element"
+        name="contact"
+        data-aos="fade-up"
+      >
+        <div className="container">
+          <div className="row container">
+            <ContactForm />
+          </div>
+        </div>
+      </Element>{" "}
+      {/* SCROLL TOP START */}
+      {initialTop ? <ScrollUp className="" /> : <div></div>}
+      {/* SCROLL TO END */}
+      {/* FOOTER START */}
+      <Footer />
+      {/* FOOTER END */}
+    </div>
+  );
+};
 
 export default Home;

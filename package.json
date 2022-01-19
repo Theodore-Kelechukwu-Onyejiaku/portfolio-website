@@ -5,7 +5,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "server": "nodemon app.js",
+    "frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "build-frontend": "npm run build --prefix frontend"
   },
   "engines": {
     "node": "14.16.0"
@@ -17,6 +21,9 @@
     "dotenv": "^8.2.0",
     "express": "~4.16.1",
     "mongoose": "^5.12.3",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "react-scroll": "^1.8.4",
+    "simple-react-lightbox": "^3.6.9-0",
+    "simplelightbox": "^2.9.0"
   }
 }

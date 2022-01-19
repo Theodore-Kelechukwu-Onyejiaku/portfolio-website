@@ -1,19 +1,21 @@
-import { Switch, Route} from "react-router-dom";
-
-import "./App.css"
+import { Switch, Route } from "react-router-dom";
+import SimpleReactLightbox from "simple-react-lightbox";
+import "./App.css";
+import "aos/dist/aos.css";
 
 import Home from "./components/Home";
 import Response from "./components/Response";
 
-
 function App() {
   return (
-    <div className="App">
-      <Switch>
-		      <Route exact path="/" component={Home}/>
-				  <Route path="/response/:contactId" component={Response}/>
-	    </Switch>
-    </div>
+    <SimpleReactLightbox>
+      <div className="App">
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/response/:contactId" component={Response} />
+        </Switch>
+      </div>
+    </SimpleReactLightbox>
   );
 }
 
