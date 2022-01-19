@@ -113,7 +113,21 @@ const Projects = () => {
         {/* Project Container */}
         <SRLWrapper options={options}>
           <div className="project-container">
-            <div>
+            {/* <div> */}
+            <a
+              data-aos="fade-up"
+              href={four}
+              className="project-box responsive-img business "
+            >
+              <img
+                src={four}
+                alt="My Portfolio. Built Using React, lightbox, Sendgrid api for email and drift"
+              />
+              <a href="#" className="btn-animated">
+                <span>Visit</span>
+              </a>
+            </a>
+
               <a
                 data-aos="fade-up"
                 href={six}
@@ -122,14 +136,14 @@ const Projects = () => {
                 <img
                   src={six}
                   alt="
-              A Responsive page built using React and SASS
+              A Responsive page built using React, Nodejs, Cloudinary,etc.
               "
                 />
-                <a href="https://myq-fe.netlify.app/" className="btn-animated">
+                <a href="https://decode-yearphoto-book.netlify.app/" className="btn-animated">
                   <span>Visit</span>
                 </a>
               </a>
-            </div>
+            {/* </div> */}
 
             <a
               data-aos="fade-up"
@@ -148,20 +162,7 @@ const Projects = () => {
               </a>
             </a>
 
-            <a
-              data-aos="fade-up"
-              href={four}
-              className="project-box responsive-img business "
-            >
-              <img
-                src={four}
-                alt="My Portfolio. Built Using React, lightbox, Sendgrid api for email and drift"
-              />
-              <a href="#" className="btn-animated">
-                <span>Visit</span>
-              </a>
-            </a>
-
+            
             <a
               data-aos="fade-up"
               href={three}

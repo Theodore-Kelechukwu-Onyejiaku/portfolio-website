@@ -21,7 +21,7 @@ const Stack = () => {
                   MongoDB is a No-Sql Database that is scalable, fast,
                   document-based and object-oriented database
                 </p>
-                <a href="#" className="btn-animated">
+                <a href="https://www.mongodb.com/" className="btn-animated">
                   <span>Read More</span>
                 </a>
               </div>
@@ -35,7 +35,7 @@ const Stack = () => {
                   ExpressJS is a NodeJs framework for building scalable and fast
                   server applications.
                 </p>
-                <a href="#" className="btn-animated">
+                <a href="https://expressjs.com/" className="btn-animated">
                   <span>Read More</span>
                 </a>
               </div>
@@ -50,7 +50,7 @@ const Stack = () => {
                   ReactJS is a frontend framework for building fast and large ui
                   applications. It is managed by Facebook
                 </p>
-                <a href="#" className="btn-animated">
+                <a href="https://reactjs.org/" className="btn-animated">
                   <span>Read More</span>
                 </a>
               </div>
@@ -65,7 +65,7 @@ const Stack = () => {
                   NodeJS is a runtime built using the Google Chrome V8 engine.
                   It is very fast!
                 </p>
-                <a href="#" className="btn-animated">
+                <a href="https://nodejs.org/en/" className="btn-animated">
                   <span>Read More</span>
                 </a>
               </div>
