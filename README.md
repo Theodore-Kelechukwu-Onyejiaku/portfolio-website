@@ -4,4 +4,4 @@ My portfolio website built using
 https://theodore-onyejiaku.herokuapp.com/
 
 ## Technologies
-React, Lightbox, Sendgrid API and Drift.
+NodeJS, ExpressJs, React, Lightbox, Sendgrid API and Drift.
