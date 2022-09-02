@@ -1,5 +1,6 @@
 # About
-My portfolio website built using 
+My portfolio website.
+
 ## Live Demo
 https://theodore-onyejiaku.herokuapp.com/
 
